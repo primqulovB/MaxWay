@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/splashScreen">
+    <action
+        android:id="@+id/action_splashScreen_to_homeScreen"
+        app:destination="@id/homeScreen"
+        app:popUpTo="@id/app_navigation"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="uz.bahrom.myapps.presentation.screens.splash.SplashScreen"
+        android:label="SplashScreen"
+        tools:layout="@layout/screen_splash">
+
+        <action
+            android:id="@+id/action_splashScreen_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/app_navigation"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeScreen"
+        android:name="uz.bahrom.myapps.presentation.screens.main.home.HomeScreen"
+        android:label="HomeScreen"
+        tools:layout="@layout/screen_home"/>
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="uz.bahrom.myapps.presentation.screens.login.login.LoginScreen"
+        android:label="LoginScreen"
+        tools:layout="@layout/screen_login"/>
+</navigation>

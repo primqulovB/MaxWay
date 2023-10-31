@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "302460929027",
+    "project_id": "my-app-bahrom",
+    "storage_bucket": "my-app-bahrom.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302460929027:android:4d4227258e33155de43a36",
+        "android_client_info": {
+          "package_name": "uz.bahrom.myapps"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsLvWfSUW1sEm3jmVvV0PO6WqdJwjd1_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
