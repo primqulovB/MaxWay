@@ -11,16 +11,16 @@ import javax.inject.Inject
 @HiltViewModel
 class SplashViewModel @Inject constructor(
     private val pref: MySharedPreferences,
-    private val diraction: SplashDiraction
+    private val direction: SplashDirection
 ) : SplashContract.SplashViewModel, ViewModel() {
 
     init {
         viewModelScope.launch {
             delay(2000)
             if (true) {
-                diraction.moveToHomeScreen()
+                direction.moveToHomeScreen()
             } else {
-                diraction.moveToLoginScreen()
+                direction.moveToLoginScreen()
             }
         }
     }

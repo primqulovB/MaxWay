@@ -4,7 +4,7 @@ import uz.bahrom.myapps.AppNavigationDirections
 import uz.bahrom.myapps.utils.navigation.AppNavigator
 import javax.inject.Inject
 
-class SplashDiraction @Inject constructor(
+class SplashDirection @Inject constructor(
     private val navigator: AppNavigator
 ) : SplashContract.SplashDirection {
     override suspend fun moveToLoginScreen() {
