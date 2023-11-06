@@ -16,8 +16,8 @@ class AdapterCategory :
     private var clickCategory: (((String), (String)) -> Unit)? = null
 
 
-    fun setClikCategoryListener(blok: ((String, String) -> Unit)) {
-        clickCategory = blok
+    fun setClickCategoryListener(block: ((String, String) -> Unit)) {
+        clickCategory = block
     }
 
     object CategoryDiffUtil : DiffUtil.ItemCallback<ItemCategoryParam>() {
@@ -37,23 +37,23 @@ class AdapterCategory :
 
     }
 
-    inner class CategoryViewHolder(val binding: ItemCategoryBinding) :
+    inner class CategoryViewHolder(private val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {
 
-            binding.categoryCard.setOnClickListener { view ->
+            binding.categoryCard.setOnClickListener {
                 getItem(adapterPosition).isSelected = !getItem(adapterPosition).isSelected
                 clickCategory?.invoke(getItem(adapterPosition).id, getItem(adapterPosition).name)
-                binding.categoryCard.setBackgroundResource(if (getItem(adapterPosition).isSelected == true) R.drawable.bg_category_item_selected else R.drawable.bg_category_item)
-                binding.categoryName.setTextColor(if (getItem(adapterPosition).isSelected == true) Color.WHITE else Color.BLACK)
+                binding.categoryCard.setBackgroundResource(if (getItem(adapterPosition).isSelected) R.drawable.bg_category_item_selected else R.drawable.bg_category_item)
+                binding.categoryName.setTextColor(if (getItem(adapterPosition).isSelected) Color.WHITE else Color.BLACK)
             }
         }
 
         fun bind(position: Int) {
             binding.categoryName.text = getItem(position).name
-            binding.categoryCard.setBackgroundResource(if (getItem(position).isSelected == true) R.drawable.bg_category_item_selected else R.drawable.bg_category_item)
-            binding.categoryName.setTextColor(if (getItem(position).isSelected == true) Color.WHITE else Color.BLACK)
+            binding.categoryCard.setBackgroundResource(if (getItem(position).isSelected) R.drawable.bg_category_item_selected else R.drawable.bg_category_item)
+            binding.categoryName.setTextColor(if (getItem(position).isSelected) Color.WHITE else Color.BLACK)
         }
     }
 
